@@ -1,1 +1,67 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}*/
+
+.hero-image-container {
+    height: 100vh; /* Tüm ekran yüksekliğini kaplar */
+    background-image: url('/images/anasayfa.jpg'); /* Arka plan görseli */
+    background-size: cover; /* Görseli tam ekrana sığdırır */
+    background-position: center; /* Görseli ortalar */
+    background-repeat: no-repeat; /* Görsel tekrar etmez */
+    display: flex; /* Flexbox ile içerikleri düzenler */
+    align-items: center; /* İçerikleri dikey olarak ortalar */
+    justify-content: center; /* İçerikleri yatay olarak ortalar */
+    margin: 0; /* Varsayılan boşlukları sıfırlar */
+    padding: 0; /* Varsayılan dolguları sıfırlar */
+}
+
+.text-container {
+    background-color: rgba(0, 0, 0, 0.3); /* Şeffaf siyah arka plan (0.3 şeffaflık) */
+    padding: 20px 40px; /* İçerik boşluğu */
+    border-radius: 12px; /* Köşeleri yuvarlar */
+    text-align: center; /* Metni ortalar */
+    max-width: 600px; /* Şeffaf kutu genişliği sınırlandırılır */
+    width: 80%; /* Kutu genişliği ekranın %80'ine ayarlanır */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hafif bir gölge ekler */
+    color: #ffffff; /* Metin rengi beyaz */
+}
+
+    .text-container a {
+        text-decoration: none; /* Link alt çizgisini kaldırır */
+        color: #ffc107; /* Link rengi sarı */
+    }
+
+        .text-container a:hover {
+            color: #ffeb3b; /* Linkin üzerine gelindiğinde rengi değiştirir */
+        }
+
+
+
+
+
+
+
+
+
+
+
 
