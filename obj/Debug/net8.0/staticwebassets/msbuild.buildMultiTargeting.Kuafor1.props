@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Kuafor1.props" />
+</Project>

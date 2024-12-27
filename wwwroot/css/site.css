@@ -1,0 +1,66 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}*/
+
+.hero-image-container {
+    height: 100vh; /* Tüm ekran yüksekliðini kaplar */
+    background-image: url('/images/anasayfa.jpg'); /* Arka plan görseli */
+    background-size: cover; /* Görseli tam ekrana sýðdýrýr */
+    background-position: center; /* Görseli ortalar */
+    background-repeat: no-repeat; /* Görsel tekrar etmez */
+    display: flex; /* Flexbox ile içerikleri düzenler */
+    align-items: center; /* Ýçerikleri dikey olarak ortalar */
+    justify-content: center; /* Ýçerikleri yatay olarak ortalar */
+    margin: 0; /* Varsayýlan boþluklarý sýfýrlar */
+    padding: 0; /* Varsayýlan dolgularý sýfýrlar */
+}
+
+.text-container {
+    background-color: rgba(0, 0, 0, 0.3); /* Þeffaf siyah arka plan (0.3 þeffaflýk) */
+    padding: 20px 40px; /* Ýçerik boþluðu */
+    border-radius: 12px; /* Köþeleri yuvarlar */
+    text-align: center; /* Metni ortalar */
+    max-width: 600px; /* Þeffaf kutu geniþliði sýnýrlandýrýlýr */
+    width: 80%; /* Kutu geniþliði ekranýn %80'ine ayarlanýr */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Hafif bir gölge ekler */
+    color: #ffffff; /* Metin rengi beyaz */
+}
+
+    .text-container a {
+        text-decoration: none; /* Link alt çizgisini kaldýrýr */
+        color: #ffc107; /* Link rengi sarý */
+    }
+
+        .text-container a:hover {
+            color: #ffeb3b; /* Linkin üzerine gelindiðinde rengi deðiþtirir */
+        }
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,35 @@
+﻿@model Kuafor1.Models.Uye
+
+@{
+    ViewData["Title"] = "Üye Kayıt";
+}
+
+<h2 class="text-center">Üye Kayıt</h2>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Yeni Üyelik Oluştur</h5>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-controller="Uye" asp-action="KayitOl">
+                <div class="form-group mb-3">
+                    <label for="KullaniciAdi">Kullanıcı Adı:</label>
+                    <input type="text" class="form-control" id="KullaniciAdi" name="KullaniciAdi" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Telefon">Telefon Numarası:</label>
+                    <input type="text"
+                           class="form-control"
+                           id="Telefon"
+                           name="Telefon"
+                           maxlength="10"
+                           pattern="\d{10}"
+                           title="Telefon numarası tam olarak 10 haneli olmalıdır."
+                           required />
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydol</button>
+            </form>
+        </div>
+    </div>
+</div>

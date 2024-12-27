@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Üye Giriş";
+}
+
+<h2 class="text-center">Üye Giriş</h2>
+
+<div class="container mt-4">
+
+    <!-- Başarılı Mesaj -->
+    @if (ViewBag.BasariMesaji != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.BasariMesaji
+        </div>
+    }
+
+    <!-- Üye Giriş Formu -->
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Üye Giriş</h5>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-controller="Uye" asp-action="Giris">
+                <div class="form-group mb-3">
+                    <label for="kullaniciAdi">Kullanıcı Adı:</label>
+                    <input type="text" class="form-control" id="kullaniciAdi" name="kullaniciAdi" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="telefon">Telefon Numarası:</label>
+                    <input type="text" class="form-control" id="telefon" name="telefon" maxlength="10" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Giriş Yap</button>
+            </form>
+            @if (ViewBag.Mesaj != null)
+            {
+                <div class="alert alert-danger mt-3">
+                    @ViewBag.Mesaj
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Yeni Üyelik -->
+    <div class="text-center">
+        <p>Eğer üye değilseniz, üye olunuz.</p>
+        <a asp-controller="Uye" asp-action="KayitOl" class="btn btn-secondary">Üye Ol</a>
+    </div>
+</div>

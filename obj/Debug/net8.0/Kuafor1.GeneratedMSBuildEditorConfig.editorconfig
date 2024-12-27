@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Kuafor1
+build_property.RootNamespace = Kuafor1
+build_property.ProjectDir = C:\Users\kerem\source\repos\Kuafor1\Kuafor1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\kerem\source\repos\Kuafor1\Kuafor1
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Admin/CalisanIslemleri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2FsaXNhbklzbGVtbGVyaS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Admin/Giris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2lyaXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Admin/HizmetIslemleri.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSGl6bWV0SXNsZW1sZXJpLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Admin/Islemler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSXNsZW1sZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Admin/RandevuListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmFuZGV2dUxpc3RlbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Admin/UyeListele.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXllTGlzdGVsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Uye/Giris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXllXEdpcmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Uye/KayitOl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXllXEtheWl0T2wuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Uye/Randevularim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXllXFJhbmRldnVsYXJpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/kerem/source/repos/Kuafor1/Kuafor1/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-c0n2s7f6gi

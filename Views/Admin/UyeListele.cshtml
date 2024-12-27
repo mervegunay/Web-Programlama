@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Kuafor1.Models.Uye>
+
+@{
+    ViewData["Title"] = "Üyeleri Listele";
+}
+
+<h2 class="text-center">Kayıtlı Üyeler</h2>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Üye Listesi</h5>
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Üye ID</th>
+                        <th>Kullanıcı Adı</th>
+                        <th>Telefon Numarası</th>
+                        <th>İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        @foreach (var uye in Model)
+                        {
+                            <tr>
+                                <td>@uye.UyeId</td>
+                                <td>@uye.KullaniciAdi</td>
+                                <td>@uye.Telefon</td>
+                                <td>
+                                    <a asp-controller="Uye" asp-action="Sil" asp-route-id="@uye.UyeId" class="btn btn-danger btn-sm">
+                                        Sil
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center">Hiç kayıtlı üye bulunmamaktadır.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- İşlemler Sayfasına Dön Butonu -->
+    <div class="text-center mt-4">
+        <a asp-controller="Admin" asp-action="Islemler" class="btn btn-secondary btn-lg">
+            İşlemler Sayfasına Dön
+        </a>
+    </div>
+</div>

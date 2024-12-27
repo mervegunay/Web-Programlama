@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Kuafor1.Models.Randevu>
+
+<h2 class="text-center">Tüm Randevular</h2>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Randevu Tarihi</th>
+                <th>Telefon Numarası</th>
+                <th>Hizmet</th>
+                <th>Çalışan</th>
+                <th>Ücret</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var randevu in Model)
+            {
+                <tr>
+                    <td>@randevu.RandevuTarih.ToShortDateString() @randevu.Sure:00</td>
+                    <td>@randevu.Telefon</td>
+                    <td>@randevu.Hizmet.HizmetAd</td>
+                    <td>@randevu.Calisan.CalisanAd</td>
+                    <td>@randevu.Ucret.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info">Henüz bir randevu bulunmamaktadır.</div>
+}
+

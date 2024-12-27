@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Kuafor1.Models.Randevu>
+
+@{
+    ViewData["Title"] = "Randevularım";
+}
+
+<h2 class="text-center">Randevularım</h2>
+
+<!-- Randevu Oluşturma Formu -->
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            Yeni Randevu Oluştur
+        </div>
+        <div class="card-body">
+            <form id="randevuForm">
+                <div class="form-group mb-3">
+                    <label for="RandevuTarih">Randevu Tarihi:</label>
+                    <input type="datetime-local" class="form-control" id="RandevuTarih" name="RandevuTarih" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="CalisanId">Çalışan:</label>
+                    <select class="form-control" id="CalisanId" name="CalisanId" required>
+                        <option value="">Çalışan Seçin</option>
+                        @foreach (var calisan in ViewBag.Calisanlar)
+                        {
+                            <option value="@calisan.CalisanId">@calisan.CalisanAd</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="HizmetId">Hizmet:</label>
+                    <select class="form-control" id="HizmetId" name="HizmetId" onchange="hizmetBilgiGetir()" required>
+                        <option value="">Hizmet Seçin</option>
+                        @foreach (var hizmet in ViewBag.Hizmetler)
+                        {
+                            <option value="@hizmet.HizmetId">@hizmet.HizmetAd</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Sure">Süre (Dakika):</label>
+                    <input type="text" class="form-control" id="Sure" name="Sure" readonly required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Ucret">Ücret (TL):</label>
+                    <input type="text" class="form-control" id="Ucret" name="Ucret" readonly required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Telefon">Telefon Numarası:</label>
+                    <input type="text" class="form-control" id="Telefon" name="Telefon" value="@ViewBag.Telefon" readonly required />
+                </div>
+                <button type="submit" class="btn btn-primary">Ekle</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Mevcut Randevular -->
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header bg-success text-white">
+            Mevcut Randevular
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Randevu Tarihi</th>
+                        <th>Hizmet</th>
+                        <th>Çalışan</th>
+                        <th>Süre</th>
+                        <th>Ücret</th>
+                    </tr>
+                </thead>
+                <tbody id="randevularTablosu">
+                    @foreach (var randevu in Model)
+                    {
+                        <tr>
+                            <td>@randevu.RandevuTarih.ToShortDateString()</td>
+                            <td>@randevu.Hizmet.HizmetAd</td>
+                            <td>@randevu.Calisan.CalisanAd</td>
+                            <td>@randevu.Sure dakika</td>
+                            <td>@randevu.Ucret.ToString("C")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function hizmetBilgiGetir() {
+        const hizmetId = document.getElementById("HizmetId").value;
+        if (!hizmetId) {
+            document.getElementById("Sure").value = "";
+            document.getElementById("Ucret").value = "";
+            return;
+        }
+
+        fetch(`/Uye/HizmetBilgiGetir?hizmetId=${hizmetId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Hizmet bilgisi alınırken bir hata oluştu.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data) {
+                    document.getElementById("Sure").value = data.sure;
+                    document.getElementById("Ucret").value = data.ucret.toFixed(2);
+                }
+            })
+            .catch(error => {
+                console.error("Hata:", error);
+                alert("Hizmet bilgisi alınırken bir hata oluştu.");
+            });
+    }
+
+    document.getElementById("randevuForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Formun varsayılan gönderimini engelle
+
+        const formData = new FormData(e.target); // Form verilerini al
+
+        fetch('/Uye/RandevuEkle', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => { throw err; });
+                }
+                return response.json();
+            })
+            .then(data => {
+                const table = document.getElementById("randevularTablosu");
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${new Date(data.randevuTarih).toLocaleString()}</td>
+                    <td>${data.hizmetAd}</td>
+                    <td>${data.calisanAd}</td>
+                    <td>${data.sure} dakika</td>
+                    <td>${data.ucret.toFixed(2)} TL</td>
+                `;
+                table.appendChild(row); // Yeni randevuyu tabloya ekle
+                alert("Randevu başarıyla eklendi!"); // Kullanıcıya mesaj göster
+            })
+            .catch(error => {
+                console.error("Hata Detayı:", error);
+                if (error.errors) {
+                    alert("Hatalar: " + error.errors.join(", "));
+                } else {
+                    alert(error.message || "Randevu eklenirken bir hata oluştu.");
+                }
+            });
+    });
+
+</script>
