@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Admin Giriş";
+}
+
+<h2 class="text-center">Admin Giriş</h2>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <form method="post" asp-controller="Admin" asp-action="Giris">
+                <div class="form-group mb-3">
+                    <label for="kullaniciAdi">Kullanıcı Adı</label>
+                    <input type="email" class="form-control" id="kullaniciAdi" name="kullaniciAdi" placeholder="Kullanıcı Adı" required />
+                </div>
+                <div class="form-group mb-3">
+                    <label for="sifre">Şifre</label>
+                    <input type="password" class="form-control" id="sifre" name="sifre" placeholder="Şifre" required />
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Giriş Yap</button>
+            </form>
+            @if (ViewBag.Mesaj != null)
+            {
+                <div class="alert alert-danger mt-3">
+                    @ViewBag.Mesaj
+                </div>
+            }
+        </div>
+    </div>
+</div>

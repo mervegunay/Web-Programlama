@@ -1,0 +1,77 @@
+﻿@{
+    ViewData["Title"] = "Admin İşlemleri";
+}
+
+<h2 class="text-center">Admin İşlemleri</h2>
+
+<div class="container mt-5">
+    <div class="row mb-4">
+        <div class="col text-center">
+            <p>Hoş geldiniz, <strong>@User.Identity.Name</strong>!</p>
+            <p>Bu alana yalnızca yetkili kullanıcılar erişebilir.</p>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <!-- Hizmet İşlemleri -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Hizmet İşlemleri</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Hizmet ekleme, düzenleme ve silme işlemlerini buradan gerçekleştirebilirsiniz.</p>
+                    <a asp-controller="Admin" asp-action="HizmetIslemleri" class="btn btn-primary">Hizmet İşlemleri</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Çalışan İşlemleri -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5 class="card-title mb-0">Çalışan İşlemleri</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Çalışan ekleme, düzenleme ve uygunluk bilgilerini buradan yönetebilirsiniz.</p>
+                    <a asp-controller="Admin" asp-action="CalisanIslemleri" class="btn btn-success">Çalışan İşlemleri</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Üyeleri Listele -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="card-title mb-0">Üyeleri Listele</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Tüm üyeleri listeleyin ve yönetim işlemleri yapın.</p>
+                    <a asp-controller="Admin" asp-action="UyeListele" class="btn btn-warning">Üyeleri Listele</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Randevuları Listele -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="card-title mb-0">Randevuları Listele</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Randevuları görüntüleyin ve detaylı bilgilere ulaşın.</p>
+                    <a asp-controller="Admin" asp-action="RandevuListele" class="btn btn-danger">Randevuları Listele</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Çıkış Yap Butonu -->
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <a asp-controller="Admin" asp-action="Cikis" class="btn btn-secondary btn-lg">Çıkış Yap</a>
+        </div>
+    </div>
+</div>
